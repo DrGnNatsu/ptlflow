@@ -1,0 +1,39 @@
+# ==============================================================================
+# DPFlow Optimized Requirements (Configured for CUDA 13)
+# Cleaned from 137 packages down to core essential dependencies
+# ==============================================================================
+
+# PyTorch CUDA 13.x Wheels Index
+--extra-index-url https://download.pytorch.org/whl/cu130
+
+# --- Core Deep Learning Framework (CUDA 13 Compatible) ---
+torch>=2.4.0
+lightning>=2.1.0,<2.7.0
+torchmetrics>=1.2.0
+
+# --- Core Model Dependencies (Directly imported in DPFlow & CGU modules) ---
+einops>=0.7.0
+loguru>=0.7.0
+numpy>=1.24.0,<2.2.0
+
+# --- PTLFlow Architecture & Configuration ---
+jsonargparse>=4.27.0
+PyYAML>=6.0.0
+requests>=2.31.0
+
+# --- Image / Flow I/O & Dataset Handling (Required for Datasets & Validation) ---
+opencv-python>=4.8.0
+pypng>=0.20220715.0
+scipy>=1.11.0
+
+# --- Optional: Dataset & Evaluation Utilities ---
+# h5py>=3.10.0           # Uncomment if loading HDF5 format datasets
+# tabulate>=0.9.0        # Uncomment for tabular benchmark results reporting
+# matplotlib>=3.8.0      # Uncomment for saving optical flow plots to disk
+# plotly>=5.18.0         # Uncomment for interactive HTML validation reports
+
+# --- Optional: Custom CUDA 13 Acceleration ---
+# alt_cuda_corr: Optional compiled CUDA kernel for local correlation mode.
+# By default, DPFlow uses 'allpairs' correlation mode which runs purely on PyTorch.
+# If local correlation mode is desired, compile with CUDA 13 (nvcc 13.x):
+# pip install ptlflow/utils/external/alt_cuda_corr
