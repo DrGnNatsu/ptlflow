@@ -25,6 +25,8 @@ requests>=2.31.0
 opencv-python>=4.8.0
 pypng>=0.20220715.0
 scipy>=1.11.0
+pillow>=10.0.0
+h5py>=3.10.0
 
 # --- Optional: Dataset & Evaluation Utilities ---
 # h5py>=3.10.0           # Uncomment if loading HDF5 format datasets
